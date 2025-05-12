@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Lane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #333;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      text-align: center;
+      color: #d63384;
+      margin-top: 30px;
+      text-shadow: 2px 2px 5px #fff;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #555;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery {
+      column-count: 3;
+      column-gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .memory {
+      background: #fff;
+      display: inline-block;
+      margin: 0 0 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      width: 100%;
+    }
+
+    .memory:hover {
+      transform: scale(1.03);
+    }
+
+    .memory img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      padding: 10px 15px;
+      font-size: 1em;
+      text-align: center;
+      color: #666;
+    }
+
+    @media screen and (max-width: 768px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .gallery {
+        column-count: 1;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Memory Lane</h1>
+  <p class="description">
+    Here's a little journey through the beautiful moments that made everything so special.
+  </p>
+
+  <div class="gallery">
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory1.jpeg" alt="Memory 1">
+      <div class="caption">trendy looking mummy</div>
+    </div>
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory2.jpeg" alt="Memory 2">
+      <div class="caption">Smiles that never fade</div>
+    </div>
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory3.jpeg" alt="Memory 3">
+      <div class="caption">my forever strength</div>
+    </div>
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory4.jpeg" alt="Memory 4">
+      <div class="caption">traditional and well cultured woman</div>
+    </div>
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory5.jpeg" alt="Memory 5">
+      <div class="caption">my beautifull and chubby mummy</div>
+    </div>
+    <div class="memory">
+      <img src="C:/Users/Apollo1/Downloads/memory6.jpeg" alt="Memory 6">
+      <div class="caption">super mummy and wonder woman</div>
+</div>
+</div>
+    </div>
+  </div>
+<div style="position: fixed; bottom: 20px; left: 20px;">
+   <button onclick="location.href='cake.html'" style="padding: 10px 20px; background-color: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Previous page
+  </button>
+</div>
+
+<div style="position: fixed; bottom: 20px; right: 20px;">
+  <button onclick="location.href='letter.html'" style="padding: 10px 20px; background-color: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Next page
+  </button>
+</body>
+</html>

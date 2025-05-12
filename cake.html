@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Cake</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 3em;
+      margin-bottom: 100px;
+      text-shadow: 1px 1px 4px #fff;
+    }
+
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      background: #ffb6c1;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      background: #ff69b4;
+      border-radius: 10px;
+    }
+
+    .layer:nth-child(1) { bottom: 0; }
+    .layer:nth-child(2) { bottom: 60px; background: #ff8da6; }
+    .layer:nth-child(3) { bottom: 120px; background: #ffc0cb; }
+
+    .candle {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #ff6347;
+      border-radius: 5px;
+    }
+
+    .flame {
+      width: 15px;
+      height: 20px;
+      background: radial-gradient(ellipse at center, yellow 0%, orange 70%, transparent 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); opacity: 1; }
+      to { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+    }
+
+    .wish {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: #444;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ad2167;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Make a Wish!</h1>
+
+  <div class="cake" id="cake">
+    
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="candle" id="candle">
+      <div class="flame" id="flame"></div>
+    </div>
+  </div>
+
+  <div class="wish" id="wish">
+    happiesssstttttt b'day mom!
+    May all your wishes come true every year!
+  </div>
+
+  <button class="btn" onclick="blowCandle()">Blow the Candle</button>
+
+  <audio id="blowSound">
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/29/audio_d76f0b5a1c.mp3?filename=candle-blow-out-14550.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function blowCandle() {
+      document.getElementById('flame').style.display = 'none';
+      document.getElementById('blowSound').play();
+      confetti({
+        particleCount: 200,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+      document.getElementById('wish').innerText = "Wishing you a life full of joy and celebration!";
+      setTimeout(function() {
+       window.location.href = "memorylane.html";
+    
+      }, 3000);
+   }
+  </script>
+<div style="position: fixed; bottom: 20px; left: 20px;">
+  <button onclick="location.href='index.html'" style="padding: 10px 20px; background-color: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Previous page
+  </button>
+</div>
+
+<div style="position: fixed; bottom: 20px; right: 20px;">
+  <button onclick="location.href='memorylane.html'" style="padding: 10px 20px; background-color: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Next page
+  </button>
+</div>
+</body>
+</html>
